@@ -53,3 +53,27 @@ while slow != fast:
     fast = nums[fast]
 
 ```
+
+# Find The Repeating And Missing Numbers
+
+```python
+totalSum = int((len(A) * (len(A)+1))/2)
+actualSum = 0
+
+totalSumSquare = int((len(A) * (len(A) + 1) * (2*len(A) + 1))/6)
+actualSumSquare = 0
+
+for i in A:
+    actualSum += i
+    actualSumSquare += i**2
+
+differenceSum = actualSum - totalSum
+differenceSumSquare = (actualSumSquare - totalSumSquare)/differenceSum
+
+missingNumber = int(abs((differenceSum - differenceSumSquare)/2))
+repeatedNumber = int(differenceSumSquare - missingNumber)
+
+```
+
+
+
