@@ -30,3 +30,46 @@ def myPow(self, x, n):
     return self.myPow(x*x, n/2)
 
 ```
+
+# Majority Element In Array
+
+```python
+
+return sorted(nums)[len(nums)/2]
+
+```
+
+# Majority 1/3 Element In Array
+
+```python
+
+num1 = 0
+num2 = 0
+c1 = 0
+c2 = 0
+for i in nums:
+    if num1 == i:
+        c1 += 1
+    elif num2 == i:
+        c2 += 1
+    elif c1 == 0:
+        c1 = 1
+        num1 = i
+    elif c2 == 0:
+        c2 = 1
+        num2 = i
+    else:
+        c2 -= 1
+        c1 -= 1
+num1sum = [1 for i in nums if num1 == i]
+num2sum = [1 for i in nums if num2 == i]
+answer = []
+if len(num1sum) > len(nums)/3:
+    answer.append(num1)
+if len(num2sum) > len(nums)/3:
+    answer.append(num2)
+return list(set(answer))
+
+```
+
+
