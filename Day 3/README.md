@@ -72,4 +72,19 @@ return list(set(answer))
 
 ```
 
+# Grid Unique Paths
+
+```python
+
+if m < n:
+    temp = m
+    m = n
+    n = temp
+res = 1
+for i in range(1, m):
+res = res * (n-1+i) / i
+return int(res)
+
+```
+
 
