@@ -83,4 +83,24 @@ return longest_streak
 
 ```
 
+# Longest Subarray Zero Sum
+
+```python
+
+mpp = {}
+maxi = 0
+sum = 0
+for i, value in enumerate(arr):
+    sum += value
+    if sum == 0:
+        maxi = i + 1
+    else:
+        if sum in mpp:
+            maxi = max(maxi, i - mpp[sum])
+        else:
+            mpp[sum] = i
+return maxi
+
+```
+
 
