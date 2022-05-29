@@ -103,4 +103,21 @@ return maxi
 
 ```
 
+# Longest Substring Without Repeating Characters 
+
+```python
+
+currentSubstring = ''
+maxi = 0
+for i in s:
+    if i not in currentSubstring:
+        currentSubstring += i
+    else:
+        maxi = max(maxi, len(currentSubstring))
+        currentSubstring += i
+        currentSubstring = currentSubstring[currentSubstring.index(i)+1:]
+return max(maxi, len(currentSubstring))
+
+```
+
 
