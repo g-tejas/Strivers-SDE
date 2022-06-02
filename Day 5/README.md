@@ -8,3 +8,15 @@ while curr:
 return prev
 
 ```
+
+# Find The Middle Of Linked List
+
+```python
+
+slow = fast = head
+while fast and fast.next:
+    slow = slow.next
+    fast = fast.next.next
+return slow
+
+```
